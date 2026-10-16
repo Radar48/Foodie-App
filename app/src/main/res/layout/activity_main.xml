@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/bg_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Bar: Title & View Cart Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Foodie App"
+                    android:textColor="@color/food_primary_dark"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome! What would you like to eat?"
+                    android:textColor="@color/text_muted"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnViewCart"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="🛒 View Cart"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_button"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+        </LinearLayout>
+
+        <!-- Search Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_input_field"
+            android:padding="4dp">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search burgers, pizza, fries..."
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/text_hint"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Search"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_search_button" />
+        </LinearLayout>
+
+        <!-- Categories Horizontal Scroll -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCatAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="All"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCatBurgers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Burgers"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_navy"
+                    android:background="@drawable/bg_search"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCatPizza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Pizza"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_navy"
+                    android:background="@drawable/bg_search"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCatSides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Sides"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_navy"
+                    android:background="@drawable/bg_search"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCatDrinks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Drinks"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_navy"
+                    android:background="@drawable/bg_search"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCatDesserts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Desserts"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_navy"
+                    android:background="@drawable/bg_search" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

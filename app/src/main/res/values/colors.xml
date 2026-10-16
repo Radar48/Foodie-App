@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="food_primary">#FF6F00</color> <!-- Vibrant Food Orange -->
+    <color name="food_primary_dark">#E65100</color>
+    <color name="text_dark">#0F172A</color> <!-- High-contrast Slate Black -->
+    <color name="text_navy">#1A237E</color> <!-- Deep Contrast Blue -->
+    <color name="text_muted">#475569</color> <!-- Readable Muted Gray -->
+    <color name="text_hint">#64748B</color> <!-- Clear Hint Text -->
+    <color name="bg_light">#F8FAFC</color>
+    <color name="search_bg">#F1F5F9</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="rating_orange">#FFB300</color>
+</resources>
